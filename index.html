@@ -4,9 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/styles/hud.css" />
+    <link rel="stylesheet" href="./src/styles/responsivity.css" />
+
     <title>Bob | 3D VR</title>
   </head>
   <body>
+    <div class="box hud" id="hud-panel">
+      <button class="hud-toggle" id="hud-toggle">⮜</button>
+
+      <div class="hud-content">
+        <p>
+          Hello visitor. <br />
+          To inspect the scene press: <br />
+          <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
+        </p>
+
+        <p>
+          Use <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> to move
+          around.
+        </p>
+
+        <p>Click on <strong>Bob</strong> in the scene to interact.</p>
+
+        <p>
+          Drag the mouse to look around. <br />
+          On mobile, move your phone to explore the scene.
+        </p>
+
+        <p>Toggle this panel with <kbd>H</kbd></p>
+      </div>
+
+      <div class="hud-label">INFO</div>
+    </div>
+
     <a-scene>
       <a-entity position="0 0.3 -2">
         <a-plane width="0.8" height="0.3" color="#F5704E"></a-plane>
@@ -20,7 +52,7 @@
         position="2 0.5 -3"
       ></a-entity>
 
-       <a-entity
+      <a-entity
         geometry="primitive: sphere; radius: 0.3"
         material="color: #F5704E"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
@@ -74,6 +106,14 @@
         wasd-controls
       >
         <a-cursor color="#000"></a-cursor>
+
+        <a-text
+          value="Dev Tip\nPress Ctrl + Alt + I\nExplore the code"
+          align="center"
+          color="#F5704E"
+          width="1.8"
+          position="0 0 0.01"
+        ></a-text>
       </a-camera>
     </a-scene>
 

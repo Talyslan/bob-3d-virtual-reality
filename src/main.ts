@@ -6,3 +6,4 @@ import "./components/auto-rotate";
 import "./components/floating";
 import "./components/interaction";
 
+import "./scripts/hud-toggle";

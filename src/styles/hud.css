@@ -1,0 +1,166 @@
+:root {
+  --text: #f5704e;
+  --box-bg: rgba(0, 0, 0, 0.6);
+  --border: rgba(245, 112, 78, 0.4);
+
+  --font: "Orbitron", sans-serif;
+}
+
+.box.hud {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  max-height: 300px;
+
+  width: 260px;
+  padding: 18px;
+
+  border-radius: 6px;
+
+  background: var(--box-bg);
+
+  border: 1px solid var(--border);
+
+  color: var(--text);
+
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+
+  z-index: 999;
+
+  box-shadow:
+    0 0 12px rgba(245, 112, 78, 0.3),
+    inset 0 0 8px rgba(245, 112, 78, 0.2);
+
+  transition:
+    width 0.35s ease,
+    height 0.35s ease,
+    padding 0.35s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.box.hud::before {
+  content: "SYSTEM INFO";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.box.hud kbd {
+  background: rgba(245, 112, 78, 0.15);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.box p {
+  margin: 0;
+}
+
+.box p + p {
+  margin-top: 10px;
+}
+
+.box kbd {
+  background: #1e1e1e;
+  border-radius: 6px;
+  padding: 2px 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #f5704e;
+}
+
+.box {
+  animation: panelAppear 0.6s ease;
+}
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hud-toggle {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: rgba(245, 112, 78, 0.25);
+  color: var(--text);
+
+  font-size: 16px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hud-toggle:hover {
+  background: rgba(245, 112, 78, 0.35);
+}
+
+.hud-label {
+  display: none;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  font-size: 16px;
+  letter-spacing: 2px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform-origin: center;
+  translate: -50% -50%;
+}
+
+.box.hud.collapsed {
+  width: 42px;
+  height: 200px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.9;
+}
+
+.box.hud.collapsed .hud-toggle {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box.hud.collapsed .hud-content {
+  display: none;
+}
+
+.box.hud.collapsed .hud-label {
+  display: block;
+}
+
+.box.hud.collapsed::before {
+  display: none;
+}

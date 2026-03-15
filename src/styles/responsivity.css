@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+  .box.hud {
+    width: 220px;
+    font-size: 12px;
+  }
+
+  .hud-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .box.hud.collapsed {
+    width: 48px;
+  }
+}
