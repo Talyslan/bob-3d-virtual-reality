@@ -8,6 +8,20 @@
   </head>
   <body>
     <a-scene>
+      <a-text
+        value="Bob"
+        font="https://cdn.aframe.io/fonts/KelsonSans.fnt"
+        position="0 2.8 -2.5"
+        align="center"
+        color="#F5704E"
+        width="8"
+        scale="1.5 1.5 1.5"
+        letter-spacing="2"
+        opacity="0.9"
+      >
+        ></a-text
+      >
+
       <a-entity
         id="magic"
         gltf-model="/models/bob-3d.glb"
@@ -18,15 +32,6 @@
         interaction
       ></a-entity>
 
-      <a-camera
-        position="0 1.6 0"
-        camera="active: true"
-        look-controls
-        wasd-controls
-      >
-        <a-cursor color="#000"></a-cursor>
-      </a-camera>
-
       <a-entity
         position="0 0.5 -2.5"
         particle-system="preset: dust; velocity: 2 3 5; acceleration: 3 1 4;  minParticles: 100;  maxParticles: 500; color: #F5704E;"
@@ -35,6 +40,15 @@
       <a-entity
         environment="preset: yavapai; groundColor: #F5704E; skyColor: #87CEEB; skyType: atmosphere; shadow: true; shadowIntensity: 1; shadowSoftness: 0.5; fog: 0.6; fogColor: #F5704E; fogNear: 0.5; fogFar: 1.5;"
       ></a-entity>
+
+      <a-camera
+        position="0 1.6 0"
+        camera="active: true"
+        look-controls
+        wasd-controls
+      >
+        <a-cursor color="#000"></a-cursor>
+      </a-camera>
     </a-scene>
 
     <script type="module" src="/src/main.ts"></script>
