@@ -9,11 +9,13 @@
   <body>
     <a-scene>
       <a-entity
+        id="magic"
         gltf-model="/models/bob-3d.glb"
         scale="1 1 1"
         position="0 0.5 -2.5"
         auto-rotate
         floating
+        interaction
       ></a-entity>
 
       <a-camera
@@ -26,8 +28,8 @@
       </a-camera>
 
       <a-entity
-        position="0 0 0"
-        particle-system="preset: dust; velocity: 2 3 5; acceleration: 3 1 4;  minParticles: 100;  maxParticles: 500; color: #F5704E";
+        position="0 0.5 -2.5"
+        particle-system="preset: dust; velocity: 2 3 5; acceleration: 3 1 4;  minParticles: 100;  maxParticles: 500; color: #F5704E;"
       ></a-entity>
 
       <a-entity
