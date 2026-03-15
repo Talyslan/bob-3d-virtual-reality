@@ -13,14 +13,24 @@
         scale="1 1 1"
         position="0 0 -2"
       ></a-entity>
-      <a-plane
-        position="0 0 -2"
-        rotation="-90 0 0"
-        width="4"
-        height="4"
-        color="#7BC8A4"
-      ></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+
+      <a-camera
+        position="0 1.6 0"
+        camera="active: true"
+        look-controls
+        wasd-controls
+      >
+        <a-cursor color="#000"></a-cursor>
+      </a-camera>
+
+      <a-entity
+        position="0 0 0"
+        particle-system="preset: dust; velocity: 2 3 5; acceleration: 3 1 4;  minParticles: 100;  maxParticles: 500; color: #F5704E";
+      ></a-entity>
+
+      <a-entity
+        environment="preset: yavapai; groundColor: #F5704E; skyColor: #87CEEB; skyType: atmosphere; shadow: true; shadowIntensity: 1; shadowSoftness: 0.5; fog: 0.6; fogColor: #F5704E; fogNear: 0.5; fogFar: 1.5;"
+      ></a-entity>
     </a-scene>
 
     <script type="module" src="/src/main.ts"></script>
